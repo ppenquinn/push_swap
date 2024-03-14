@@ -6,7 +6,7 @@
 /*   By: penquin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 02:00:10 by penquin           #+#    #+#             */
-/*   Updated: 2024/03/14 15:05:43 by penquin          ###   ########.fr       */
+/*   Updated: 2024/03/14 16:45:29 by penquin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 int	ultimate_atoi(char *str,int i)
 {
-	int count = 1;
+	int		count = 1;
+	char	*s;
 
 	while (ft_isdigit(str[i + count]))
 		count++;
-	if (!ft_iswspace(i + count))
+	if (!ft_iswspace(str[i + count]))
 		return (printf("Error"));
+	s = ft_substr(str, i, count); //malloc function
+	
 }
 
 int	check_input(char *str)
@@ -47,12 +50,12 @@ t_lst	ft_input(int count, char **arg)
 {
 	t_lst	*lst;
 	int		i;
-
+	int		num;
 
 	i = 1;
 	while (i < count)
 	{
-		num = check_input(arg[i])
+		num = check_input(arg[i]);
 	}
 	return (lst);
 }
