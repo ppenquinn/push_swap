@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: penquin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: nappalav <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 01:58:46 by penquin           #+#    #+#             */
-/*   Updated: 2024/03/14 02:46:26 by penquin          ###   ########.fr       */
+/*   Updated: 2024/03/14 20:06:59 by nappalav         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@ int	main(int argc, char **argv)
 	t_lst	*lst;
 
 	if (argc <= 1)
-		return (NULL);
+	{
+		ft_printf("Arg Error\n");
+		return (0);
+	}
 	lst = ft_input(argc, argv);
 	if (!lst)
-		return (NULL);
+		return (0);
+	return (0);
 }
