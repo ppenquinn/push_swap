@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_swap.c                                         :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nappalav <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: penquin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 02:00:10 by penquin           #+#    #+#             */
-/*   Updated: 2024/03/17 02:08:28 by nappalav         ###   ########.fr       */
+/*   Updated: 2024/03/17 03:22:40 by penquin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	ultimate_atoi(char *str, int i)
 	s = ft_substr(str, i, count); //malloc function
 	// ft_printf("string is %s || len is %zu\n", s, ft_strlen(s));
 	num = ft_atoi(s);
+	free(s);
 	return (num);
 }
 
@@ -41,13 +42,6 @@ int	check_input(char *str)
 		num = 0;
 		if (ft_iswspace(str[i])) //white space
 			i++;
-		// handle charectors
-		// else if (ft_isalpha(str[i]) && (ft_iswspace(str[i + 1]) || str[i + 1] == 0))
-		// {
-		// 	num = str[i];
-		// 	ft_printf("At %d word, The num is %d\n", i , num);
-		// 	i++;
-		// }
 		else if (ft_isdigit(str[i]) || ((str[i] == '-' || str[i] == '+') && ft_isdigit(str[i + 1])))
 		{
 			ft_printf("\nin ulti_atoi\n");
@@ -57,7 +51,13 @@ int	check_input(char *str)
 		}
 		else
 			return (ft_printf("check input Error\n"));
-
+		// handle charectors
+		// else if (ft_isalpha(str[i]) && (ft_iswspace(str[i + 1]) || str[i + 1] == 0))
+		// {
+		// 	num = str[i];
+		// 	ft_printf("At %d word, The num is %d\n", i , num);
+		// 	i++;
+		// }
 	}
 	return (num);
 }
