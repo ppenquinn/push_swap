@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   put_swap_util.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nappalav <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/14 01:58:46 by penquin           #+#    #+#             */
-/*   Updated: 2024/03/17 02:08:41 by nappalav         ###   ########.fr       */
+/*   Created: 2024/03/17 02:05:35 by nappalav          #+#    #+#             */
+/*   Updated: 2024/03/17 02:07:54 by nappalav         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
-int	main(int argc, char **argv)
+int	ft_precheck(char **str)
 {
-	t_lst	*lst;
+	size_t	i;
+	size_t	j;
+	int		cnt;
 
-	if (argc <= 1 || ft_precheck(argv) == 0)
+	i = 1;
+	cnt = 0;
+	while (str[i])
 	{
-		ft_printf("Error\n");
-		return (0);
+		j = 0;
+		while (str[i][j])
+		{
+			if (ft_isdigit(str[i][j]) || ((str[i][j] == '+' ||
+				str[i][j] == '-') && (ft_isdigit(str[i][j + 1]) &&
+				(ft_iswspace(str[i][j - 1]) || j == 0))))
+				cnt++;
+			else if (!ft_iswspace(str[i][j]))
+				return (0);
+			j++;
+		}
+		i++;
 	}
-	lst = ft_input(argc, argv);
-	// if (!lst)
-	// 	return (0);
-	ft_printf("Input Pass\n");
-	return (0);
+	if (cnt == 0)
+		return (0);
+	return (cnt);
 }
-
-

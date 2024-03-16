@@ -6,7 +6,7 @@
 #    By: nappalav <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/15 23:28:39 by nappalav          #+#    #+#              #
-#    Updated: 2024/03/17 01:45:25 by nappalav         ###   ########.fr        #
+#    Updated: 2024/03/17 02:09:49 by nappalav         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ ARFLAGS = -rcs
 
 LIB = ./resource/libprintf.a
 
-SRC = put_swap.c main.c
+SRC = main.c push_swap.c push_swap_util.c
 
 all:	$(NAME)
 

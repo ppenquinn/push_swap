@@ -6,11 +6,11 @@
 /*   By: nappalav <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 02:00:10 by penquin           #+#    #+#             */
-/*   Updated: 2024/03/17 01:44:57 by nappalav         ###   ########.fr       */
+/*   Updated: 2024/03/17 02:08:28 by nappalav         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "put_swap.h"
+#include "push_swap.h"
 
 int	ultimate_atoi(char *str, int i)
 {
