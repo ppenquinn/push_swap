@@ -6,7 +6,7 @@
 /*   By: nappalav <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 02:00:10 by penquin           #+#    #+#             */
-/*   Updated: 2024/03/18 15:01:51 by nappalav         ###   ########.fr       */
+/*   Updated: 2024/03/18 15:09:08 by nappalav         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ultimate_atoi(char *str, int i)
 	s = ft_substr(str, i, count); //malloc
 	if (!s)
 		return (NULL);
-	num = 
+	num =
 	return (s);
 }
 
