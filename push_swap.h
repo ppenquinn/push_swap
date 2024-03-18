@@ -6,7 +6,7 @@
 /*   By: nappalav <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 01:52:13 by penquin           #+#    #+#             */
-/*   Updated: 2024/03/17 02:08:11 by nappalav         ###   ########.fr       */
+/*   Updated: 2024/03/18 13:48:43 by nappalav         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,4 @@ typedef struct s_lst
 int		ft_precheck(char **str);
 t_lst	*ft_input(int count, char **arg);
 
-#endif
+# endif

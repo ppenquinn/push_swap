@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_swap.c                                         :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nappalav <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 02:00:10 by penquin           #+#    #+#             */
-/*   Updated: 2024/03/17 02:08:28 by nappalav         ###   ########.fr       */
+/*   Updated: 2024/03/18 15:01:51 by nappalav         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,11 @@ int	ultimate_atoi(char *str, int i)
 	count = 1;
 	while (ft_isdigit(str[i + count]))
 		count++;
-	ft_printf(" count is %d i(in ulti) is %d\n", count, i);
-	if (!ft_iswspace(str[i + count]) && str[i + count])
-		return (ft_printf("ultimate_atoi Error\n"));
-	s = ft_substr(str, i, count); //malloc function
-	// ft_printf("string is %s || len is %zu\n", s, ft_strlen(s));
-	num = ft_atoi(s);
-	return (num);
+	s = ft_substr(str, i, count); //malloc
+	if (!s)
+		return (NULL);
+	num = 
+	return (s);
 }
 
 int	check_input(char *str)
@@ -41,23 +39,14 @@ int	check_input(char *str)
 		num = 0;
 		if (ft_iswspace(str[i])) //white space
 			i++;
-		// handle charectors
-		// else if (ft_isalpha(str[i]) && (ft_iswspace(str[i + 1]) || str[i + 1] == 0))
-		// {
-		// 	num = str[i];
-		// 	ft_printf("At %d word, The num is %d\n", i , num);
-		// 	i++;
-		// }
-		else if (ft_isdigit(str[i]) || ((str[i] == '-' || str[i] == '+') && ft_isdigit(str[i + 1])))
+		else if (ft_isdigit(str[i]) || str[i] == '+' || str[i] == '-')
 		{
-			ft_printf("\nin ulti_atoi\n");
 			num = ultimate_atoi(str, i);
 			i += num;
-			ft_printf("i is %d\n", num);
+			i++;
 		}
 		else
 			return (ft_printf("check input Error\n"));
-
 	}
 	return (num);
 }
