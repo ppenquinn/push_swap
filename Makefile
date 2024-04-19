@@ -6,7 +6,7 @@
 #    By: nappalav <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/15 23:28:39 by nappalav          #+#    #+#              #
-#    Updated: 2024/04/19 13:44:18 by nappalav         ###   ########.fr        #
+#    Updated: 2024/04/19 14:00:16 by nappalav         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,16 +30,14 @@ $(NAME):$(OBJ)
 	${MAKE} -C ./resource/ft_printf
 	$(CC) $(CFLAGS) $(OBJ) $(LIB) -o $(NAME)
 
-%.o:	%.c
-	$(CC) $(CFLAGS) $< -o $@
 
 clean:
 	${MAKE} -C ./resource/libft fclean
 	${MAKE} -C ./resource/ft_printf fclean
+	$(RM) $(RMFLAGS) $(OBJ)
 
 fclean: clean
 	$(RM) $(RMFLAGS) $(NAME)
-	$(RM) $(RMFLAGS) $(OBJ)
 
 re:	fclean all
 
