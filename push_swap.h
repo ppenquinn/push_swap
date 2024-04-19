@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nappalav <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/14 01:52:13 by penquin           #+#    #+#             */
-/*   Updated: 2024/03/18 13:48:43 by nappalav         ###   ########.fr       */
+/*   Created: 2024/04/19 13:54:32 by nappalav          #+#    #+#             */
+/*   Updated: 2024/04/19 13:54:36 by nappalav         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUT_SWAP_H
-# define PUT_SWAP_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "resource/libft/libft.h"
-# include "resource/ft_printf/ft_printf.h"
+# include "./resource/libft/libft.h"
+# include "./resource/ft_printf/ft_printf.h"
 
 typedef struct s_lst
 {
@@ -27,5 +27,8 @@ typedef struct s_lst
 
 int		ft_precheck(char **str);
 t_lst	*ft_input(int count, char **arg);
+t_lst	*check_input(char *str);
+char	*ft_subtract(char *str, int i);
+t_lst	*ft_createnode(char *digit, t_lst *head, t_lst **tail);
 
-# endif
+#endif

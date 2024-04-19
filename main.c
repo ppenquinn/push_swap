@@ -6,13 +6,11 @@
 /*   By: nappalav <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 01:58:46 by penquin           #+#    #+#             */
-/*   Updated: 2024/03/17 02:08:41 by nappalav         ###   ########.fr       */
+/*   Updated: 2024/04/19 13:46:05 by nappalav         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
 
 int	main(int argc, char **argv)
 {
@@ -29,5 +27,7 @@ int	main(int argc, char **argv)
 	ft_printf("Input Pass\n");
 	return (0);
 }
+
+
 
 

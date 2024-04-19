@@ -6,13 +6,13 @@
 /*   By: nappalav <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 02:00:10 by penquin           #+#    #+#             */
-/*   Updated: 2024/03/18 15:09:08 by nappalav         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:33:17 by nappalav         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ultimate_atoi(char *str, int i)
+char	*ft_subtract(char *str, int i)
 {
 	int		count;
 	int		num;
@@ -24,31 +24,34 @@ int	ultimate_atoi(char *str, int i)
 	s = ft_substr(str, i, count); //malloc
 	if (!s)
 		return (NULL);
-	num =
 	return (s);
 }
 
-int	check_input(char *str)
+t_lst	*check_input(char *str)
 {
-	int	i;
-	int	num;
+	int		i;
+	t_lst	*set;
+	t_lst	*tail;
+	char	*digit;
 
 	i = 0;
 	while (str[i])
 	{
-		num = 0;
 		if (ft_iswspace(str[i])) //white space
 			i++;
 		else if (ft_isdigit(str[i]) || str[i] == '+' || str[i] == '-')
 		{
-			num = ultimate_atoi(str, i);
-			i += num;
+			digit = ft_subtract(str, i);
+			set = ft_createnode(digit, set, &tail); //malloc
 			i++;
 		}
 		else
-			return (ft_printf("check input Error\n"));
+		{
+			ft_printf("check input error");
+			return (NULL);
+		}
 	}
-	return (num);
+	return (set);
 }
 
 t_lst	*ft_input(int count, char **arg)
@@ -61,7 +64,7 @@ t_lst	*ft_input(int count, char **arg)
 	while (i < count)
 	{
 		ft_printf("At %d arg \n", i);
-		num = check_input(arg[i]);
+		lst = check_input(arg[i]);
 
 		i++;
 	}

@@ -6,7 +6,7 @@
 #    By: nappalav <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/29 00:29:16 by nappalav          #+#    #+#              #
-#    Updated: 2024/03/15 20:20:06 by nappalav         ###   ########.fr        #
+#    Updated: 2024/04/19 13:17:56 by nappalav         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = libprintf.a
 CC = cc
 CP = cp
 AR = ar
+MV = mv
 CFLAGS = -Wall -Wextra -Werror -c
 ARFLAGS = -rcs
 
@@ -28,6 +29,8 @@ all:	$(NAME)
 $(NAME):$(OBJ)
 		$(CP) $(LIBFT) $(NAME)
 		$(AR) $(ARFLAGS) $(NAME) $(OBJ)
+		$(MV) $(NAME) ..
+
 
 %.o:	%.c
 		$(CC) $(CFLAGS) $< -o $@
@@ -36,7 +39,7 @@ clean:
 		rm -f $(OBJ) $(OBJBONUS)
 
 fclean: clean
-		rm -f $(NAME) $(BONUS)
+		rm -f ../$(NAME)
 
 re:	fclean all
 
