@@ -6,27 +6,35 @@
 /*   By: nappalav <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 02:05:35 by nappalav          #+#    #+#             */
-/*   Updated: 2024/04/18 15:25:34 by nappalav         ###   ########.fr       */
+/*   Updated: 2024/05/03 20:49:21 by nappalav         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_lst	*ft_createnode(char *digit, t_lst *head, t_lst **tail)
+size_t	ft_createnode(char *digit, t_lst **head, t_lst **tail)
 {
-	t_lst	*node;
+	t_lst *node;
 
 	node = (t_lst *)malloc(sizeof(t_lst));
 	if (!node)
-		return (NULL);
+		return (0);
 	node->content = ft_atoi(digit);
 	node->next = NULL;
-	if (!head)
-		head = node;
+	if (!(*head))
+	{
+		printf("CREATING HEAD\n");
+		*head = node;
+	}
 	if (*tail)
+	{
+		printf("CHANGING TAIL\n");
 		(*tail)->next = node;
+	}
+	printf("NEW TAIL\n");
 	*tail = node;
-	return (head);
+	printf("create node finished!\n\n");
+	return (1);
 }
 
 int ft_precheck(char **str)

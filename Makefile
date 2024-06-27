@@ -6,7 +6,7 @@
 #    By: nappalav <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/15 23:28:39 by nappalav          #+#    #+#              #
-#    Updated: 2024/04/19 14:00:16 by nappalav         ###   ########.fr        #
+#    Updated: 2024/05/03 21:10:38 by nappalav         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,10 @@ all:	$(NAME)
 
 $(NAME):$(OBJ)
 	${MAKE} -C ./resource/libft
+	${MAKE} -C ./resource/libft bonus
 	${MAKE} -C ./resource/ft_printf
 	$(CC) $(CFLAGS) $(OBJ) $(LIB) -o $(NAME)
-
+	# clear
 
 clean:
 	${MAKE} -C ./resource/libft fclean

@@ -6,7 +6,7 @@
 /*   By: nappalav <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 02:00:10 by penquin           #+#    #+#             */
-/*   Updated: 2024/04/18 15:33:17 by nappalav         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:11:21 by nappalav         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ t_lst	*check_input(char *str)
 	char	*digit;
 
 	i = 0;
+	set = NULL;
+	tail = NULL;
 	while (str[i])
 	{
 		if (ft_iswspace(str[i])) //white space
@@ -42,7 +44,7 @@ t_lst	*check_input(char *str)
 		else if (ft_isdigit(str[i]) || str[i] == '+' || str[i] == '-')
 		{
 			digit = ft_subtract(str, i);
-			set = ft_createnode(digit, set, &tail); //malloc
+			ft_createnode(digit, &set, &tail); //malloc
 			i++;
 		}
 		else
@@ -57,6 +59,7 @@ t_lst	*check_input(char *str)
 t_lst	*ft_input(int count, char **arg)
 {
 	t_lst	*lst;
+	t_lst	*tmp;
 	int		i;
 	int		num;
 
@@ -64,9 +67,14 @@ t_lst	*ft_input(int count, char **arg)
 	while (i < count)
 	{
 		ft_printf("At %d arg \n", i);
-		lst = check_input(arg[i]);
-
+		if (!lst)
+			lst = check_input(arg[i]);
+		else
+		{
+			tmp = check_input(arg[i]);
+			ft_lstadd_back(lst, tmp);
+		}
 		i++;
 	}
-	return (NULL);
+	return (lst);
 }
